@@ -21,6 +21,7 @@
                             
             }
 
+            // create function where the result of the round display
             function playRound(playerSelection,computerSelection){
                 let yourChoice= playerSelection.toLowerCase();
 
@@ -59,6 +60,7 @@
                 
             }
 
+            // create function called game where other functions are called in, show result of the game, show whitch round of the game is
             function game() {
 
             let yourScore = 0;
@@ -88,13 +90,15 @@
             }
 
             if (yourScore > computerScore) {
-                alert("You win the game");
+                alert(`You win the game! The final result is:  You:${yourScore}  Computer:${computerScore}`);
             } else if ( yourScore < computerScore) {
-                alert("You lose the game");
+                alert(`You lose the game! The final result is: You:${yourScore}  Computer:${computerScore}`);
             } else {
-                alert ("It is a tie ");
+                alert (`It is a tie! The final result is: You:${yourScore}  Computer:${computerScore}`);
             }
         }
+
+        game();
 
            
 
