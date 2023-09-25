@@ -23,14 +23,15 @@
 
             function playRound(playerSelection,computerSelection){
                 let yourChoice= playerSelection.toLowerCase();
+
                             
             
                 if (yourChoice === 'rock' && computerSelection === 'rock'){
                     return('It is a tie');
 
                 } else if (yourChoice === 'rock' && computerSelection === 'paper') {
-                    return('You lose. Paper beats rock'); 
-
+                    return('You lose. Paper beats rock')
+                            
                 } else if (yourChoice === 'rock' && computerSelection === 'scissor') {
                     return('You win. Rock beats paper.');
 
@@ -58,12 +59,30 @@
                 
             }
 
-            
+            let yourScore = 0;
+            let computerScore = 0;
 
             for (let i = 1; i<= 5; i++) {
             let computerSelection = getComputerChoice();
             let playerSelection = prompt('Write your weapon. (Rock,paper,scissor)');
             alert(playRound(playerSelection,computerSelection) +'   ' + `Round ${i}/5` );
+            
+
+            if (playRound(playerSelection,computerSelection) ==="You win. Paper beats rock."
+             || playRound(playerSelection,computerSelection) === "You win. Rock beats paper." 
+             || playRound(playerSelection,computerSelection) === "You win. Scissor beats paper.") {
+                yourScore = yourScore + 1;
+             } else if (playRound(playerSelection,computerSelection) === "You lose. Paper beats rock" 
+             || playRound(playerSelection,computerSelection) === "You lose. Rock beats scissors" 
+             || playRound(playerSelection,computerSelection) === "You lose. Scissor beats paper") {
+                computerScore = computerScore + 1;
+             } else {
+                yourScore = yourScore;
+                computerScore = computerScore;
+             }
+
+             console.log(yourScore);
+             console.log(computerScore);
             }
 
 
