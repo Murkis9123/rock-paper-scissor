@@ -59,6 +59,8 @@
                 
             }
 
+            function game() {
+
             let yourScore = 0;
             let computerScore = 0;
 
@@ -85,6 +87,14 @@
              console.log(computerScore);
             }
 
+            if (yourScore > computerScore) {
+                alert("You win the game");
+            } else if ( yourScore < computerScore) {
+                alert("You lose the game");
+            } else {
+                alert ("It is a tie ");
+            }
+        }
 
            
 
