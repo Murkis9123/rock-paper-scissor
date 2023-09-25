@@ -23,30 +23,49 @@
 
             function playRound(playerSelection,computerSelection){
                 let yourChoice= playerSelection.toLowerCase();
-                
-
+                            
+            
                 if (yourChoice === 'rock' && computerSelection === 'rock'){
                     return('It is a tie');
+
                 } else if (yourChoice === 'rock' && computerSelection === 'paper') {
-                    return('You lose. Paper beats rock');    
+                    return('You lose. Paper beats rock'); 
+
                 } else if (yourChoice === 'rock' && computerSelection === 'scissor') {
                     return('You win. Rock beats paper.');
+
                 } else if (yourChoice === 'paper' && computerSelection === 'rock') {
                     return('You win. Paper beats rock.');
+
                 } else if (yourChoice === 'paper' && computerSelection === 'paper') {
                     return('It is a tie.');
+
                 } else if (yourChoice === 'paper' && computerSelection === 'scissor') {
                     return('You lose. Scissor beats paper');
+
                 } else if (yourChoice === 'scissor' && computerSelection === 'paper') {
                     return('You win. Scissor beats paper.');
+
                 } else if (yourChoice === 'scissor' && computerSelection === 'rock') {
                     return('You lose. Rock beats scissors');
+
                 } else if (yourChoice === 'scissor' && computerSelection === 'scissor') {
                     return('It is a tie');
+
                 } else {
                     return('You did not submit your choice.');
                 }
+                
             }
+
+            
+
+            for (let i = 1; i<= 5; i++) {
+            let computerSelection = getComputerChoice();
+            let playerSelection = prompt('Write your weapon. (Rock,paper,scissor)');
+            alert(playRound(playerSelection,computerSelection) +'   ' + `Round ${i}/5` );
+            }
+
 
            
 
